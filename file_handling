@@ -28,25 +28,7 @@ public class file_handling {
         // calling delete file method
         deleteFile(mf1);
     }
-    //    creating file method
-    public static void createFileIfNotExists(String filePath) {
-        File file = new File(filePath);
-        try {
-            if (file.canWrite()) {
-                if (!file.exists()) {
-                    if (file.createNewFile()) {
-                        System.out.println("File created successfully.");
-                    }
-                } else {
-                    System.out.println("File already exists. Here its \n" + file.getAbsolutePath());
-                }
-            } else {
-                System.out.println("Access is denied.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred." + e.getMessage());
-        }
-    }
+   
     //    write to file method
     public static void writeFileContent(File file, String content) {
         try (FileWriter writer = new FileWriter(file)) {
